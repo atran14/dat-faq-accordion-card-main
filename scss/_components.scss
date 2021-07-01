@@ -29,7 +29,7 @@
   }
 
   &__content-container {
-    padding: 6rem;
+    padding: 2.5rem;
     max-width: 35rem;
 
     @include for-smaller-devices {
@@ -97,6 +97,10 @@
 .question-container {
   display: flex;
   align-items: center;
+
+  &:hover > * {
+    color: $soft-red;
+  }
 }
 
 .attribution {
@@ -135,8 +139,7 @@
 #bg-pattern-desktop {
   position: absolute;
   top: -62%;
-  left: -100%;
-  z-index: 0;
+  left: -118%;
 }
 
 #illustration-woman-online-desktop {
