@@ -1,0 +1,26 @@
+// Font family
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$kumbh-sans: 'Kumbh Sans', sans-serif;
+
+// Colors - Text Primary
+$very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+
+// Colors - Text Neutral
+$very-dark-grayish-blue: hsl(237, 12%, 33%);
+$dark-grayish-blue: hsl(240, 6%, 50%);
+
+// Colors - Background Gradient
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+
+// Colors - Dividers
+$light-grayish-blue: hsl(240, 5%, 91%);
+
+// Function
+@mixin for-smaller-devices {
+  @media only screen and (max-width: 800px) {
+      @content;
+  }
+}

@@ -1,0 +1,150 @@
+@use "helpers" as *;
+
+.faq-card {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin: 12rem 2.5rem;
+  border-radius: 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  // overflow: hidden;
+
+  @include for-smaller-devices {
+    overflow: visible;
+    max-width: 425px;
+    flex-direction: column;
+  }
+
+  &__illustration-stack {
+    position: relative;
+    text-align: center;
+    padding: 5rem 0;
+
+    @include for-smaller-devices {
+      padding: 0;
+    }
+  }
+
+  &__content-container {
+    padding: 6rem;
+    max-width: 35rem;
+
+    @include for-smaller-devices {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 2.5rem;
+    padding: 0 0 1.5rem 0;
+
+    @include for-smaller-devices {
+      text-align: center;
+      max-width: 425px;
+      flex-direction: column;
+    }
+  }
+
+  &__section {
+    input {
+      display: none;
+
+      &:checked ~ {
+        .question-container > .faq-card {
+          &__question {
+            font-weight: 700;
+          }
+
+          &__toggle-arrow {
+            transform: rotate(180deg);
+            transform-origin: center;
+          }
+        }
+
+        .faq-card__answer {
+          max-height: 100vh;
+        }
+      }
+    }
+  }
+
+  &__header,
+  &__question {
+    color: $very-dark-grayish-blue;
+  }
+
+  &__question {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    width: 95%;
+  }
+
+  &__answer {
+    max-height: 0;
+    margin: 0 0;
+    overflow: hidden;
+    font-weight: 400;
+    color: $dark-grayish-blue;
+    line-height: 1.6;
+    transition: max-height 0.3s;
+  }
+}
+
+.question-container {
+  display: flex;
+  align-items: center;
+}
+
+.attribution {
+  color: white;
+}
+
+.illustration {
+  position: absolute;
+
+  &--big-device {
+    display: block;
+    @include for-smaller-devices {
+      display: none;
+    }
+  }
+
+  &--small-device {
+    display: none;
+    @include for-smaller-devices {
+      display: block;
+    }
+  }
+}
+
+#bg-pattern-mobile {
+  position: static;
+  margin: 0 auto;
+}
+
+#illustration-woman-online-mobile {
+  top: -9rem;
+  left: 50%;
+  margin-left: -12.3rem;
+}
+
+#bg-pattern-desktop {
+  position: absolute;
+  top: -62%;
+  left: -100%;
+  z-index: 0;
+}
+
+#illustration-woman-online-desktop {
+  position: inherit;
+  left: -5rem;
+  z-index: 0;
+}
+
+#illustration-box-desktop {
+  z-index: 1;
+}
